@@ -31,6 +31,46 @@ namespace LibraryClient.localhost {
         
         private System.Threading.SendOrPostCallback HelloWorldOperationCompleted;
         
+        private System.Threading.SendOrPostCallback QueryBookByNameOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback QueryBookByAuthorOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback QueryBookByYearAndEditionOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback AuthorExistsByCodeOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback UpdateBookNameOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback UpdateBookAuthorOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback UpdateBookYearAndEditionOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback AddBookYearAndEditionOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback QueryEditionByNumberOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback CountEditionsByBookOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback CreateAuthorOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback CreateBookOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback DeleteAuthorByCodeOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback DeleteBookOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback DeleteBookEditionOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback QueryAuthorByCodeInBooksOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback QueryAuthorByNameOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback QueryBookByCodeOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback QueryBookByCompleteNameOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback UpdateAuthorNameOperationCompleted;
+        
         private bool useDefaultCredentialsSetExplicitly;
         
         /// <remarks/>
@@ -73,6 +113,66 @@ namespace LibraryClient.localhost {
         public event HelloWorldCompletedEventHandler HelloWorldCompleted;
         
         /// <remarks/>
+        public event QueryBookByNameCompletedEventHandler QueryBookByNameCompleted;
+        
+        /// <remarks/>
+        public event QueryBookByAuthorCompletedEventHandler QueryBookByAuthorCompleted;
+        
+        /// <remarks/>
+        public event QueryBookByYearAndEditionCompletedEventHandler QueryBookByYearAndEditionCompleted;
+        
+        /// <remarks/>
+        public event AuthorExistsByCodeCompletedEventHandler AuthorExistsByCodeCompleted;
+        
+        /// <remarks/>
+        public event UpdateBookNameCompletedEventHandler UpdateBookNameCompleted;
+        
+        /// <remarks/>
+        public event UpdateBookAuthorCompletedEventHandler UpdateBookAuthorCompleted;
+        
+        /// <remarks/>
+        public event UpdateBookYearAndEditionCompletedEventHandler UpdateBookYearAndEditionCompleted;
+        
+        /// <remarks/>
+        public event AddBookYearAndEditionCompletedEventHandler AddBookYearAndEditionCompleted;
+        
+        /// <remarks/>
+        public event QueryEditionByNumberCompletedEventHandler QueryEditionByNumberCompleted;
+        
+        /// <remarks/>
+        public event CountEditionsByBookCompletedEventHandler CountEditionsByBookCompleted;
+        
+        /// <remarks/>
+        public event CreateAuthorCompletedEventHandler CreateAuthorCompleted;
+        
+        /// <remarks/>
+        public event CreateBookCompletedEventHandler CreateBookCompleted;
+        
+        /// <remarks/>
+        public event DeleteAuthorByCodeCompletedEventHandler DeleteAuthorByCodeCompleted;
+        
+        /// <remarks/>
+        public event DeleteBookCompletedEventHandler DeleteBookCompleted;
+        
+        /// <remarks/>
+        public event DeleteBookEditionCompletedEventHandler DeleteBookEditionCompleted;
+        
+        /// <remarks/>
+        public event QueryAuthorByCodeInBooksCompletedEventHandler QueryAuthorByCodeInBooksCompleted;
+        
+        /// <remarks/>
+        public event QueryAuthorByNameCompletedEventHandler QueryAuthorByNameCompleted;
+        
+        /// <remarks/>
+        public event QueryBookByCodeCompletedEventHandler QueryBookByCodeCompleted;
+        
+        /// <remarks/>
+        public event QueryBookByCompleteNameCompletedEventHandler QueryBookByCompleteNameCompleted;
+        
+        /// <remarks/>
+        public event UpdateAuthorNameCompletedEventHandler UpdateAuthorNameCompleted;
+        
+        /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/HelloWorld", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
         public string HelloWorld() {
             object[] results = this.Invoke("HelloWorld", new object[0]);
@@ -96,6 +196,602 @@ namespace LibraryClient.localhost {
             if ((this.HelloWorldCompleted != null)) {
                 System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
                 this.HelloWorldCompleted(this, new HelloWorldCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/QueryBookByName", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public string QueryBookByName(string str) {
+            object[] results = this.Invoke("QueryBookByName", new object[] {
+                        str});
+            return ((string)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void QueryBookByNameAsync(string str) {
+            this.QueryBookByNameAsync(str, null);
+        }
+        
+        /// <remarks/>
+        public void QueryBookByNameAsync(string str, object userState) {
+            if ((this.QueryBookByNameOperationCompleted == null)) {
+                this.QueryBookByNameOperationCompleted = new System.Threading.SendOrPostCallback(this.OnQueryBookByNameOperationCompleted);
+            }
+            this.InvokeAsync("QueryBookByName", new object[] {
+                        str}, this.QueryBookByNameOperationCompleted, userState);
+        }
+        
+        private void OnQueryBookByNameOperationCompleted(object arg) {
+            if ((this.QueryBookByNameCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.QueryBookByNameCompleted(this, new QueryBookByNameCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/QueryBookByAuthor", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public string QueryBookByAuthor(string str) {
+            object[] results = this.Invoke("QueryBookByAuthor", new object[] {
+                        str});
+            return ((string)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void QueryBookByAuthorAsync(string str) {
+            this.QueryBookByAuthorAsync(str, null);
+        }
+        
+        /// <remarks/>
+        public void QueryBookByAuthorAsync(string str, object userState) {
+            if ((this.QueryBookByAuthorOperationCompleted == null)) {
+                this.QueryBookByAuthorOperationCompleted = new System.Threading.SendOrPostCallback(this.OnQueryBookByAuthorOperationCompleted);
+            }
+            this.InvokeAsync("QueryBookByAuthor", new object[] {
+                        str}, this.QueryBookByAuthorOperationCompleted, userState);
+        }
+        
+        private void OnQueryBookByAuthorOperationCompleted(object arg) {
+            if ((this.QueryBookByAuthorCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.QueryBookByAuthorCompleted(this, new QueryBookByAuthorCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/QueryBookByYearAndEdition", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public string QueryBookByYearAndEdition(string year, string edition) {
+            object[] results = this.Invoke("QueryBookByYearAndEdition", new object[] {
+                        year,
+                        edition});
+            return ((string)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void QueryBookByYearAndEditionAsync(string year, string edition) {
+            this.QueryBookByYearAndEditionAsync(year, edition, null);
+        }
+        
+        /// <remarks/>
+        public void QueryBookByYearAndEditionAsync(string year, string edition, object userState) {
+            if ((this.QueryBookByYearAndEditionOperationCompleted == null)) {
+                this.QueryBookByYearAndEditionOperationCompleted = new System.Threading.SendOrPostCallback(this.OnQueryBookByYearAndEditionOperationCompleted);
+            }
+            this.InvokeAsync("QueryBookByYearAndEdition", new object[] {
+                        year,
+                        edition}, this.QueryBookByYearAndEditionOperationCompleted, userState);
+        }
+        
+        private void OnQueryBookByYearAndEditionOperationCompleted(object arg) {
+            if ((this.QueryBookByYearAndEditionCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.QueryBookByYearAndEditionCompleted(this, new QueryBookByYearAndEditionCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/AuthorExistsByCode", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public bool AuthorExistsByCode(string str) {
+            object[] results = this.Invoke("AuthorExistsByCode", new object[] {
+                        str});
+            return ((bool)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void AuthorExistsByCodeAsync(string str) {
+            this.AuthorExistsByCodeAsync(str, null);
+        }
+        
+        /// <remarks/>
+        public void AuthorExistsByCodeAsync(string str, object userState) {
+            if ((this.AuthorExistsByCodeOperationCompleted == null)) {
+                this.AuthorExistsByCodeOperationCompleted = new System.Threading.SendOrPostCallback(this.OnAuthorExistsByCodeOperationCompleted);
+            }
+            this.InvokeAsync("AuthorExistsByCode", new object[] {
+                        str}, this.AuthorExistsByCodeOperationCompleted, userState);
+        }
+        
+        private void OnAuthorExistsByCodeOperationCompleted(object arg) {
+            if ((this.AuthorExistsByCodeCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.AuthorExistsByCodeCompleted(this, new AuthorExistsByCodeCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/UpdateBookName", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public void UpdateBookName(string code, string str) {
+            this.Invoke("UpdateBookName", new object[] {
+                        code,
+                        str});
+        }
+        
+        /// <remarks/>
+        public void UpdateBookNameAsync(string code, string str) {
+            this.UpdateBookNameAsync(code, str, null);
+        }
+        
+        /// <remarks/>
+        public void UpdateBookNameAsync(string code, string str, object userState) {
+            if ((this.UpdateBookNameOperationCompleted == null)) {
+                this.UpdateBookNameOperationCompleted = new System.Threading.SendOrPostCallback(this.OnUpdateBookNameOperationCompleted);
+            }
+            this.InvokeAsync("UpdateBookName", new object[] {
+                        code,
+                        str}, this.UpdateBookNameOperationCompleted, userState);
+        }
+        
+        private void OnUpdateBookNameOperationCompleted(object arg) {
+            if ((this.UpdateBookNameCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.UpdateBookNameCompleted(this, new System.ComponentModel.AsyncCompletedEventArgs(invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/UpdateBookAuthor", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public void UpdateBookAuthor(string code, int[] str) {
+            this.Invoke("UpdateBookAuthor", new object[] {
+                        code,
+                        str});
+        }
+        
+        /// <remarks/>
+        public void UpdateBookAuthorAsync(string code, int[] str) {
+            this.UpdateBookAuthorAsync(code, str, null);
+        }
+        
+        /// <remarks/>
+        public void UpdateBookAuthorAsync(string code, int[] str, object userState) {
+            if ((this.UpdateBookAuthorOperationCompleted == null)) {
+                this.UpdateBookAuthorOperationCompleted = new System.Threading.SendOrPostCallback(this.OnUpdateBookAuthorOperationCompleted);
+            }
+            this.InvokeAsync("UpdateBookAuthor", new object[] {
+                        code,
+                        str}, this.UpdateBookAuthorOperationCompleted, userState);
+        }
+        
+        private void OnUpdateBookAuthorOperationCompleted(object arg) {
+            if ((this.UpdateBookAuthorCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.UpdateBookAuthorCompleted(this, new System.ComponentModel.AsyncCompletedEventArgs(invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/UpdateBookYearAndEdition", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public void UpdateBookYearAndEdition(string code, string year, string edition) {
+            this.Invoke("UpdateBookYearAndEdition", new object[] {
+                        code,
+                        year,
+                        edition});
+        }
+        
+        /// <remarks/>
+        public void UpdateBookYearAndEditionAsync(string code, string year, string edition) {
+            this.UpdateBookYearAndEditionAsync(code, year, edition, null);
+        }
+        
+        /// <remarks/>
+        public void UpdateBookYearAndEditionAsync(string code, string year, string edition, object userState) {
+            if ((this.UpdateBookYearAndEditionOperationCompleted == null)) {
+                this.UpdateBookYearAndEditionOperationCompleted = new System.Threading.SendOrPostCallback(this.OnUpdateBookYearAndEditionOperationCompleted);
+            }
+            this.InvokeAsync("UpdateBookYearAndEdition", new object[] {
+                        code,
+                        year,
+                        edition}, this.UpdateBookYearAndEditionOperationCompleted, userState);
+        }
+        
+        private void OnUpdateBookYearAndEditionOperationCompleted(object arg) {
+            if ((this.UpdateBookYearAndEditionCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.UpdateBookYearAndEditionCompleted(this, new System.ComponentModel.AsyncCompletedEventArgs(invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/AddBookYearAndEdition", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public void AddBookYearAndEdition(string code, string year, string edition) {
+            this.Invoke("AddBookYearAndEdition", new object[] {
+                        code,
+                        year,
+                        edition});
+        }
+        
+        /// <remarks/>
+        public void AddBookYearAndEditionAsync(string code, string year, string edition) {
+            this.AddBookYearAndEditionAsync(code, year, edition, null);
+        }
+        
+        /// <remarks/>
+        public void AddBookYearAndEditionAsync(string code, string year, string edition, object userState) {
+            if ((this.AddBookYearAndEditionOperationCompleted == null)) {
+                this.AddBookYearAndEditionOperationCompleted = new System.Threading.SendOrPostCallback(this.OnAddBookYearAndEditionOperationCompleted);
+            }
+            this.InvokeAsync("AddBookYearAndEdition", new object[] {
+                        code,
+                        year,
+                        edition}, this.AddBookYearAndEditionOperationCompleted, userState);
+        }
+        
+        private void OnAddBookYearAndEditionOperationCompleted(object arg) {
+            if ((this.AddBookYearAndEditionCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.AddBookYearAndEditionCompleted(this, new System.ComponentModel.AsyncCompletedEventArgs(invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/QueryEditionByNumber", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public bool QueryEditionByNumber(string code, string number) {
+            object[] results = this.Invoke("QueryEditionByNumber", new object[] {
+                        code,
+                        number});
+            return ((bool)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void QueryEditionByNumberAsync(string code, string number) {
+            this.QueryEditionByNumberAsync(code, number, null);
+        }
+        
+        /// <remarks/>
+        public void QueryEditionByNumberAsync(string code, string number, object userState) {
+            if ((this.QueryEditionByNumberOperationCompleted == null)) {
+                this.QueryEditionByNumberOperationCompleted = new System.Threading.SendOrPostCallback(this.OnQueryEditionByNumberOperationCompleted);
+            }
+            this.InvokeAsync("QueryEditionByNumber", new object[] {
+                        code,
+                        number}, this.QueryEditionByNumberOperationCompleted, userState);
+        }
+        
+        private void OnQueryEditionByNumberOperationCompleted(object arg) {
+            if ((this.QueryEditionByNumberCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.QueryEditionByNumberCompleted(this, new QueryEditionByNumberCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/CountEditionsByBook", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public int CountEditionsByBook(string code) {
+            object[] results = this.Invoke("CountEditionsByBook", new object[] {
+                        code});
+            return ((int)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void CountEditionsByBookAsync(string code) {
+            this.CountEditionsByBookAsync(code, null);
+        }
+        
+        /// <remarks/>
+        public void CountEditionsByBookAsync(string code, object userState) {
+            if ((this.CountEditionsByBookOperationCompleted == null)) {
+                this.CountEditionsByBookOperationCompleted = new System.Threading.SendOrPostCallback(this.OnCountEditionsByBookOperationCompleted);
+            }
+            this.InvokeAsync("CountEditionsByBook", new object[] {
+                        code}, this.CountEditionsByBookOperationCompleted, userState);
+        }
+        
+        private void OnCountEditionsByBookOperationCompleted(object arg) {
+            if ((this.CountEditionsByBookCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.CountEditionsByBookCompleted(this, new CountEditionsByBookCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/CreateAuthor", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public void CreateAuthor(string name) {
+            this.Invoke("CreateAuthor", new object[] {
+                        name});
+        }
+        
+        /// <remarks/>
+        public void CreateAuthorAsync(string name) {
+            this.CreateAuthorAsync(name, null);
+        }
+        
+        /// <remarks/>
+        public void CreateAuthorAsync(string name, object userState) {
+            if ((this.CreateAuthorOperationCompleted == null)) {
+                this.CreateAuthorOperationCompleted = new System.Threading.SendOrPostCallback(this.OnCreateAuthorOperationCompleted);
+            }
+            this.InvokeAsync("CreateAuthor", new object[] {
+                        name}, this.CreateAuthorOperationCompleted, userState);
+        }
+        
+        private void OnCreateAuthorOperationCompleted(object arg) {
+            if ((this.CreateAuthorCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.CreateAuthorCompleted(this, new System.ComponentModel.AsyncCompletedEventArgs(invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/CreateBook", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public void CreateBook(string title, string[] authors, string year, string edition) {
+            this.Invoke("CreateBook", new object[] {
+                        title,
+                        authors,
+                        year,
+                        edition});
+        }
+        
+        /// <remarks/>
+        public void CreateBookAsync(string title, string[] authors, string year, string edition) {
+            this.CreateBookAsync(title, authors, year, edition, null);
+        }
+        
+        /// <remarks/>
+        public void CreateBookAsync(string title, string[] authors, string year, string edition, object userState) {
+            if ((this.CreateBookOperationCompleted == null)) {
+                this.CreateBookOperationCompleted = new System.Threading.SendOrPostCallback(this.OnCreateBookOperationCompleted);
+            }
+            this.InvokeAsync("CreateBook", new object[] {
+                        title,
+                        authors,
+                        year,
+                        edition}, this.CreateBookOperationCompleted, userState);
+        }
+        
+        private void OnCreateBookOperationCompleted(object arg) {
+            if ((this.CreateBookCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.CreateBookCompleted(this, new System.ComponentModel.AsyncCompletedEventArgs(invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/DeleteAuthorByCode", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public void DeleteAuthorByCode(string code) {
+            this.Invoke("DeleteAuthorByCode", new object[] {
+                        code});
+        }
+        
+        /// <remarks/>
+        public void DeleteAuthorByCodeAsync(string code) {
+            this.DeleteAuthorByCodeAsync(code, null);
+        }
+        
+        /// <remarks/>
+        public void DeleteAuthorByCodeAsync(string code, object userState) {
+            if ((this.DeleteAuthorByCodeOperationCompleted == null)) {
+                this.DeleteAuthorByCodeOperationCompleted = new System.Threading.SendOrPostCallback(this.OnDeleteAuthorByCodeOperationCompleted);
+            }
+            this.InvokeAsync("DeleteAuthorByCode", new object[] {
+                        code}, this.DeleteAuthorByCodeOperationCompleted, userState);
+        }
+        
+        private void OnDeleteAuthorByCodeOperationCompleted(object arg) {
+            if ((this.DeleteAuthorByCodeCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.DeleteAuthorByCodeCompleted(this, new System.ComponentModel.AsyncCompletedEventArgs(invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/DeleteBook", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public void DeleteBook(string book) {
+            this.Invoke("DeleteBook", new object[] {
+                        book});
+        }
+        
+        /// <remarks/>
+        public void DeleteBookAsync(string book) {
+            this.DeleteBookAsync(book, null);
+        }
+        
+        /// <remarks/>
+        public void DeleteBookAsync(string book, object userState) {
+            if ((this.DeleteBookOperationCompleted == null)) {
+                this.DeleteBookOperationCompleted = new System.Threading.SendOrPostCallback(this.OnDeleteBookOperationCompleted);
+            }
+            this.InvokeAsync("DeleteBook", new object[] {
+                        book}, this.DeleteBookOperationCompleted, userState);
+        }
+        
+        private void OnDeleteBookOperationCompleted(object arg) {
+            if ((this.DeleteBookCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.DeleteBookCompleted(this, new System.ComponentModel.AsyncCompletedEventArgs(invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/DeleteBookEdition", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public void DeleteBookEdition(string code, string number) {
+            this.Invoke("DeleteBookEdition", new object[] {
+                        code,
+                        number});
+        }
+        
+        /// <remarks/>
+        public void DeleteBookEditionAsync(string code, string number) {
+            this.DeleteBookEditionAsync(code, number, null);
+        }
+        
+        /// <remarks/>
+        public void DeleteBookEditionAsync(string code, string number, object userState) {
+            if ((this.DeleteBookEditionOperationCompleted == null)) {
+                this.DeleteBookEditionOperationCompleted = new System.Threading.SendOrPostCallback(this.OnDeleteBookEditionOperationCompleted);
+            }
+            this.InvokeAsync("DeleteBookEdition", new object[] {
+                        code,
+                        number}, this.DeleteBookEditionOperationCompleted, userState);
+        }
+        
+        private void OnDeleteBookEditionOperationCompleted(object arg) {
+            if ((this.DeleteBookEditionCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.DeleteBookEditionCompleted(this, new System.ComponentModel.AsyncCompletedEventArgs(invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/QueryAuthorByCodeInBooks", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public bool QueryAuthorByCodeInBooks(string code) {
+            object[] results = this.Invoke("QueryAuthorByCodeInBooks", new object[] {
+                        code});
+            return ((bool)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void QueryAuthorByCodeInBooksAsync(string code) {
+            this.QueryAuthorByCodeInBooksAsync(code, null);
+        }
+        
+        /// <remarks/>
+        public void QueryAuthorByCodeInBooksAsync(string code, object userState) {
+            if ((this.QueryAuthorByCodeInBooksOperationCompleted == null)) {
+                this.QueryAuthorByCodeInBooksOperationCompleted = new System.Threading.SendOrPostCallback(this.OnQueryAuthorByCodeInBooksOperationCompleted);
+            }
+            this.InvokeAsync("QueryAuthorByCodeInBooks", new object[] {
+                        code}, this.QueryAuthorByCodeInBooksOperationCompleted, userState);
+        }
+        
+        private void OnQueryAuthorByCodeInBooksOperationCompleted(object arg) {
+            if ((this.QueryAuthorByCodeInBooksCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.QueryAuthorByCodeInBooksCompleted(this, new QueryAuthorByCodeInBooksCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/QueryAuthorByName", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public string QueryAuthorByName(string str) {
+            object[] results = this.Invoke("QueryAuthorByName", new object[] {
+                        str});
+            return ((string)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void QueryAuthorByNameAsync(string str) {
+            this.QueryAuthorByNameAsync(str, null);
+        }
+        
+        /// <remarks/>
+        public void QueryAuthorByNameAsync(string str, object userState) {
+            if ((this.QueryAuthorByNameOperationCompleted == null)) {
+                this.QueryAuthorByNameOperationCompleted = new System.Threading.SendOrPostCallback(this.OnQueryAuthorByNameOperationCompleted);
+            }
+            this.InvokeAsync("QueryAuthorByName", new object[] {
+                        str}, this.QueryAuthorByNameOperationCompleted, userState);
+        }
+        
+        private void OnQueryAuthorByNameOperationCompleted(object arg) {
+            if ((this.QueryAuthorByNameCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.QueryAuthorByNameCompleted(this, new QueryAuthorByNameCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/QueryBookByCode", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public string QueryBookByCode(string code) {
+            object[] results = this.Invoke("QueryBookByCode", new object[] {
+                        code});
+            return ((string)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void QueryBookByCodeAsync(string code) {
+            this.QueryBookByCodeAsync(code, null);
+        }
+        
+        /// <remarks/>
+        public void QueryBookByCodeAsync(string code, object userState) {
+            if ((this.QueryBookByCodeOperationCompleted == null)) {
+                this.QueryBookByCodeOperationCompleted = new System.Threading.SendOrPostCallback(this.OnQueryBookByCodeOperationCompleted);
+            }
+            this.InvokeAsync("QueryBookByCode", new object[] {
+                        code}, this.QueryBookByCodeOperationCompleted, userState);
+        }
+        
+        private void OnQueryBookByCodeOperationCompleted(object arg) {
+            if ((this.QueryBookByCodeCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.QueryBookByCodeCompleted(this, new QueryBookByCodeCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/QueryBookByCompleteName", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public string QueryBookByCompleteName(string name) {
+            object[] results = this.Invoke("QueryBookByCompleteName", new object[] {
+                        name});
+            return ((string)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void QueryBookByCompleteNameAsync(string name) {
+            this.QueryBookByCompleteNameAsync(name, null);
+        }
+        
+        /// <remarks/>
+        public void QueryBookByCompleteNameAsync(string name, object userState) {
+            if ((this.QueryBookByCompleteNameOperationCompleted == null)) {
+                this.QueryBookByCompleteNameOperationCompleted = new System.Threading.SendOrPostCallback(this.OnQueryBookByCompleteNameOperationCompleted);
+            }
+            this.InvokeAsync("QueryBookByCompleteName", new object[] {
+                        name}, this.QueryBookByCompleteNameOperationCompleted, userState);
+        }
+        
+        private void OnQueryBookByCompleteNameOperationCompleted(object arg) {
+            if ((this.QueryBookByCompleteNameCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.QueryBookByCompleteNameCompleted(this, new QueryBookByCompleteNameCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/UpdateAuthorName", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public void UpdateAuthorName(string code, string newName) {
+            this.Invoke("UpdateAuthorName", new object[] {
+                        code,
+                        newName});
+        }
+        
+        /// <remarks/>
+        public void UpdateAuthorNameAsync(string code, string newName) {
+            this.UpdateAuthorNameAsync(code, newName, null);
+        }
+        
+        /// <remarks/>
+        public void UpdateAuthorNameAsync(string code, string newName, object userState) {
+            if ((this.UpdateAuthorNameOperationCompleted == null)) {
+                this.UpdateAuthorNameOperationCompleted = new System.Threading.SendOrPostCallback(this.OnUpdateAuthorNameOperationCompleted);
+            }
+            this.InvokeAsync("UpdateAuthorName", new object[] {
+                        code,
+                        newName}, this.UpdateAuthorNameOperationCompleted, userState);
+        }
+        
+        private void OnUpdateAuthorNameOperationCompleted(object arg) {
+            if ((this.UpdateAuthorNameCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.UpdateAuthorNameCompleted(this, new System.ComponentModel.AsyncCompletedEventArgs(invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
             }
         }
         
@@ -143,6 +839,306 @@ namespace LibraryClient.localhost {
             }
         }
     }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3752.0")]
+    public delegate void QueryBookByNameCompletedEventHandler(object sender, QueryBookByNameCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3752.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class QueryBookByNameCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal QueryBookByNameCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public string Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((string)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3752.0")]
+    public delegate void QueryBookByAuthorCompletedEventHandler(object sender, QueryBookByAuthorCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3752.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class QueryBookByAuthorCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal QueryBookByAuthorCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public string Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((string)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3752.0")]
+    public delegate void QueryBookByYearAndEditionCompletedEventHandler(object sender, QueryBookByYearAndEditionCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3752.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class QueryBookByYearAndEditionCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal QueryBookByYearAndEditionCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public string Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((string)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3752.0")]
+    public delegate void AuthorExistsByCodeCompletedEventHandler(object sender, AuthorExistsByCodeCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3752.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class AuthorExistsByCodeCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal AuthorExistsByCodeCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public bool Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((bool)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3752.0")]
+    public delegate void UpdateBookNameCompletedEventHandler(object sender, System.ComponentModel.AsyncCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3752.0")]
+    public delegate void UpdateBookAuthorCompletedEventHandler(object sender, System.ComponentModel.AsyncCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3752.0")]
+    public delegate void UpdateBookYearAndEditionCompletedEventHandler(object sender, System.ComponentModel.AsyncCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3752.0")]
+    public delegate void AddBookYearAndEditionCompletedEventHandler(object sender, System.ComponentModel.AsyncCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3752.0")]
+    public delegate void QueryEditionByNumberCompletedEventHandler(object sender, QueryEditionByNumberCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3752.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class QueryEditionByNumberCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal QueryEditionByNumberCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public bool Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((bool)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3752.0")]
+    public delegate void CountEditionsByBookCompletedEventHandler(object sender, CountEditionsByBookCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3752.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class CountEditionsByBookCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal CountEditionsByBookCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public int Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((int)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3752.0")]
+    public delegate void CreateAuthorCompletedEventHandler(object sender, System.ComponentModel.AsyncCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3752.0")]
+    public delegate void CreateBookCompletedEventHandler(object sender, System.ComponentModel.AsyncCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3752.0")]
+    public delegate void DeleteAuthorByCodeCompletedEventHandler(object sender, System.ComponentModel.AsyncCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3752.0")]
+    public delegate void DeleteBookCompletedEventHandler(object sender, System.ComponentModel.AsyncCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3752.0")]
+    public delegate void DeleteBookEditionCompletedEventHandler(object sender, System.ComponentModel.AsyncCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3752.0")]
+    public delegate void QueryAuthorByCodeInBooksCompletedEventHandler(object sender, QueryAuthorByCodeInBooksCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3752.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class QueryAuthorByCodeInBooksCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal QueryAuthorByCodeInBooksCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public bool Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((bool)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3752.0")]
+    public delegate void QueryAuthorByNameCompletedEventHandler(object sender, QueryAuthorByNameCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3752.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class QueryAuthorByNameCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal QueryAuthorByNameCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public string Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((string)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3752.0")]
+    public delegate void QueryBookByCodeCompletedEventHandler(object sender, QueryBookByCodeCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3752.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class QueryBookByCodeCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal QueryBookByCodeCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public string Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((string)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3752.0")]
+    public delegate void QueryBookByCompleteNameCompletedEventHandler(object sender, QueryBookByCompleteNameCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3752.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class QueryBookByCompleteNameCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal QueryBookByCompleteNameCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public string Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((string)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3752.0")]
+    public delegate void UpdateAuthorNameCompletedEventHandler(object sender, System.ComponentModel.AsyncCompletedEventArgs e);
 }
 
 #pragma warning restore 1591

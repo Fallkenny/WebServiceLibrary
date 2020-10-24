@@ -4,3 +4,14 @@ C:\Users\PICHAU\source\repos\LibraryClient\LibraryClient\bin\Debug\LibraryClient
 C:\Users\PICHAU\source\repos\LibraryClient\LibraryClient\obj\Debug\LibraryClient.csprojAssemblyReference.cache
 C:\Users\PICHAU\source\repos\LibraryClient\LibraryClient\obj\Debug\LibraryClient.exe
 C:\Users\PICHAU\source\repos\LibraryClient\LibraryClient\obj\Debug\LibraryClient.pdb
+C:\GitHub\WebServiceLibrary\LibraryClient\LibraryClient\obj\Debug\LibraryClient.csprojAssemblyReference.cache
+C:\GitHub\WebServiceLibrary\LibraryClient\LibraryClient\bin\Debug\LibraryClient.exe.config
+C:\GitHub\WebServiceLibrary\LibraryClient\LibraryClient\bin\Debug\LibraryClient.exe
+C:\GitHub\WebServiceLibrary\LibraryClient\LibraryClient\bin\Debug\LibraryClient.pdb
+C:\GitHub\WebServiceLibrary\LibraryClient\LibraryClient\bin\Debug\Library.Base.dll
+C:\GitHub\WebServiceLibrary\LibraryClient\LibraryClient\bin\Debug\Newtonsoft.Json.dll
+C:\GitHub\WebServiceLibrary\LibraryClient\LibraryClient\bin\Debug\Library.Base.pdb
+C:\GitHub\WebServiceLibrary\LibraryClient\LibraryClient\bin\Debug\Newtonsoft.Json.xml
+C:\GitHub\WebServiceLibrary\LibraryClient\LibraryClient\obj\Debug\LibraryClient.csproj.CopyComplete
+C:\GitHub\WebServiceLibrary\LibraryClient\LibraryClient\obj\Debug\LibraryClient.exe
+C:\GitHub\WebServiceLibrary\LibraryClient\LibraryClient\obj\Debug\LibraryClient.pdb

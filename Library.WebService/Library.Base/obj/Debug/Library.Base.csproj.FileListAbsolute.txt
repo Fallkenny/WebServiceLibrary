@@ -1,0 +1,8 @@
+C:\GitHub\WebServiceLibrary\Library.WebService\Library.Base\bin\Debug\Library.Base.dll
+C:\GitHub\WebServiceLibrary\Library.WebService\Library.Base\bin\Debug\Library.Base.pdb
+C:\GitHub\WebServiceLibrary\Library.WebService\Library.Base\bin\Debug\Newtonsoft.Json.dll
+C:\GitHub\WebServiceLibrary\Library.WebService\Library.Base\bin\Debug\Newtonsoft.Json.xml
+C:\GitHub\WebServiceLibrary\Library.WebService\Library.Base\obj\Debug\Library.Base.csprojAssemblyReference.cache
+C:\GitHub\WebServiceLibrary\Library.WebService\Library.Base\obj\Debug\Library.Base.csproj.CopyComplete
+C:\GitHub\WebServiceLibrary\Library.WebService\Library.Base\obj\Debug\Library.Base.dll
+C:\GitHub\WebServiceLibrary\Library.WebService\Library.Base\obj\Debug\Library.Base.pdb

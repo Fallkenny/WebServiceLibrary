@@ -12,6 +12,269 @@
           </s:sequence>
         </s:complexType>
       </s:element>
+      <s:element name="QueryBookByName">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="str" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QueryBookByNameResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="QueryBookByNameResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QueryBookByAuthor">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="str" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QueryBookByAuthorResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="QueryBookByAuthorResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QueryBookByYearAndEdition">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="year" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="edition" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QueryBookByYearAndEditionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="QueryBookByYearAndEditionResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AuthorExistsByCode">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="str" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AuthorExistsByCodeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AuthorExistsByCodeResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateBookName">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="code" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="str" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateBookNameResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="UpdateBookAuthor">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="code" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="str" type="tns:ArrayOfInt" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfInt">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="int" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="UpdateBookAuthorResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="UpdateBookYearAndEdition">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="code" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="year" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="edition" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateBookYearAndEditionResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="AddBookYearAndEdition">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="code" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="year" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="edition" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddBookYearAndEditionResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="QueryEditionByNumber">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="code" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="number" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QueryEditionByNumberResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="QueryEditionByNumberResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CountEditionsByBook">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="code" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CountEditionsByBookResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CountEditionsByBookResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreateAuthor">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="name" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreateAuthorResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="CreateBook">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="title" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="authors" type="tns:ArrayOfString" />
+            <s:element minOccurs="0" maxOccurs="1" name="year" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="edition" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfString">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="CreateBookResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="DeleteAuthorByCode">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="code" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteAuthorByCodeResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="DeleteBook">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="book" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteBookResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="DeleteBookEdition">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="code" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="number" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteBookEditionResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="QueryAuthorByCodeInBooks">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="code" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QueryAuthorByCodeInBooksResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="QueryAuthorByCodeInBooksResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QueryAuthorByName">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="str" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QueryAuthorByNameResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="QueryAuthorByNameResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QueryBookByCode">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="code" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QueryBookByCodeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="QueryBookByCodeResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QueryBookByCompleteName">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="name" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QueryBookByCompleteNameResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="QueryBookByCompleteNameResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateAuthorName">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="code" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="newName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateAuthorNameResponse">
+        <s:complexType />
+      </s:element>
     </s:schema>
   </wsdl:types>
   <wsdl:message name="HelloWorldSoapIn">
@@ -20,10 +283,210 @@
   <wsdl:message name="HelloWorldSoapOut">
     <wsdl:part name="parameters" element="tns:HelloWorldResponse" />
   </wsdl:message>
+  <wsdl:message name="QueryBookByNameSoapIn">
+    <wsdl:part name="parameters" element="tns:QueryBookByName" />
+  </wsdl:message>
+  <wsdl:message name="QueryBookByNameSoapOut">
+    <wsdl:part name="parameters" element="tns:QueryBookByNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="QueryBookByAuthorSoapIn">
+    <wsdl:part name="parameters" element="tns:QueryBookByAuthor" />
+  </wsdl:message>
+  <wsdl:message name="QueryBookByAuthorSoapOut">
+    <wsdl:part name="parameters" element="tns:QueryBookByAuthorResponse" />
+  </wsdl:message>
+  <wsdl:message name="QueryBookByYearAndEditionSoapIn">
+    <wsdl:part name="parameters" element="tns:QueryBookByYearAndEdition" />
+  </wsdl:message>
+  <wsdl:message name="QueryBookByYearAndEditionSoapOut">
+    <wsdl:part name="parameters" element="tns:QueryBookByYearAndEditionResponse" />
+  </wsdl:message>
+  <wsdl:message name="AuthorExistsByCodeSoapIn">
+    <wsdl:part name="parameters" element="tns:AuthorExistsByCode" />
+  </wsdl:message>
+  <wsdl:message name="AuthorExistsByCodeSoapOut">
+    <wsdl:part name="parameters" element="tns:AuthorExistsByCodeResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateBookNameSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateBookName" />
+  </wsdl:message>
+  <wsdl:message name="UpdateBookNameSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateBookNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateBookAuthorSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateBookAuthor" />
+  </wsdl:message>
+  <wsdl:message name="UpdateBookAuthorSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateBookAuthorResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateBookYearAndEditionSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateBookYearAndEdition" />
+  </wsdl:message>
+  <wsdl:message name="UpdateBookYearAndEditionSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateBookYearAndEditionResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddBookYearAndEditionSoapIn">
+    <wsdl:part name="parameters" element="tns:AddBookYearAndEdition" />
+  </wsdl:message>
+  <wsdl:message name="AddBookYearAndEditionSoapOut">
+    <wsdl:part name="parameters" element="tns:AddBookYearAndEditionResponse" />
+  </wsdl:message>
+  <wsdl:message name="QueryEditionByNumberSoapIn">
+    <wsdl:part name="parameters" element="tns:QueryEditionByNumber" />
+  </wsdl:message>
+  <wsdl:message name="QueryEditionByNumberSoapOut">
+    <wsdl:part name="parameters" element="tns:QueryEditionByNumberResponse" />
+  </wsdl:message>
+  <wsdl:message name="CountEditionsByBookSoapIn">
+    <wsdl:part name="parameters" element="tns:CountEditionsByBook" />
+  </wsdl:message>
+  <wsdl:message name="CountEditionsByBookSoapOut">
+    <wsdl:part name="parameters" element="tns:CountEditionsByBookResponse" />
+  </wsdl:message>
+  <wsdl:message name="CreateAuthorSoapIn">
+    <wsdl:part name="parameters" element="tns:CreateAuthor" />
+  </wsdl:message>
+  <wsdl:message name="CreateAuthorSoapOut">
+    <wsdl:part name="parameters" element="tns:CreateAuthorResponse" />
+  </wsdl:message>
+  <wsdl:message name="CreateBookSoapIn">
+    <wsdl:part name="parameters" element="tns:CreateBook" />
+  </wsdl:message>
+  <wsdl:message name="CreateBookSoapOut">
+    <wsdl:part name="parameters" element="tns:CreateBookResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteAuthorByCodeSoapIn">
+    <wsdl:part name="parameters" element="tns:DeleteAuthorByCode" />
+  </wsdl:message>
+  <wsdl:message name="DeleteAuthorByCodeSoapOut">
+    <wsdl:part name="parameters" element="tns:DeleteAuthorByCodeResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteBookSoapIn">
+    <wsdl:part name="parameters" element="tns:DeleteBook" />
+  </wsdl:message>
+  <wsdl:message name="DeleteBookSoapOut">
+    <wsdl:part name="parameters" element="tns:DeleteBookResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteBookEditionSoapIn">
+    <wsdl:part name="parameters" element="tns:DeleteBookEdition" />
+  </wsdl:message>
+  <wsdl:message name="DeleteBookEditionSoapOut">
+    <wsdl:part name="parameters" element="tns:DeleteBookEditionResponse" />
+  </wsdl:message>
+  <wsdl:message name="QueryAuthorByCodeInBooksSoapIn">
+    <wsdl:part name="parameters" element="tns:QueryAuthorByCodeInBooks" />
+  </wsdl:message>
+  <wsdl:message name="QueryAuthorByCodeInBooksSoapOut">
+    <wsdl:part name="parameters" element="tns:QueryAuthorByCodeInBooksResponse" />
+  </wsdl:message>
+  <wsdl:message name="QueryAuthorByNameSoapIn">
+    <wsdl:part name="parameters" element="tns:QueryAuthorByName" />
+  </wsdl:message>
+  <wsdl:message name="QueryAuthorByNameSoapOut">
+    <wsdl:part name="parameters" element="tns:QueryAuthorByNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="QueryBookByCodeSoapIn">
+    <wsdl:part name="parameters" element="tns:QueryBookByCode" />
+  </wsdl:message>
+  <wsdl:message name="QueryBookByCodeSoapOut">
+    <wsdl:part name="parameters" element="tns:QueryBookByCodeResponse" />
+  </wsdl:message>
+  <wsdl:message name="QueryBookByCompleteNameSoapIn">
+    <wsdl:part name="parameters" element="tns:QueryBookByCompleteName" />
+  </wsdl:message>
+  <wsdl:message name="QueryBookByCompleteNameSoapOut">
+    <wsdl:part name="parameters" element="tns:QueryBookByCompleteNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateAuthorNameSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateAuthorName" />
+  </wsdl:message>
+  <wsdl:message name="UpdateAuthorNameSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateAuthorNameResponse" />
+  </wsdl:message>
   <wsdl:portType name="LibraryServiceSoap">
     <wsdl:operation name="HelloWorld">
       <wsdl:input message="tns:HelloWorldSoapIn" />
       <wsdl:output message="tns:HelloWorldSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="QueryBookByName">
+      <wsdl:input message="tns:QueryBookByNameSoapIn" />
+      <wsdl:output message="tns:QueryBookByNameSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="QueryBookByAuthor">
+      <wsdl:input message="tns:QueryBookByAuthorSoapIn" />
+      <wsdl:output message="tns:QueryBookByAuthorSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="QueryBookByYearAndEdition">
+      <wsdl:input message="tns:QueryBookByYearAndEditionSoapIn" />
+      <wsdl:output message="tns:QueryBookByYearAndEditionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AuthorExistsByCode">
+      <wsdl:input message="tns:AuthorExistsByCodeSoapIn" />
+      <wsdl:output message="tns:AuthorExistsByCodeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateBookName">
+      <wsdl:input message="tns:UpdateBookNameSoapIn" />
+      <wsdl:output message="tns:UpdateBookNameSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateBookAuthor">
+      <wsdl:input message="tns:UpdateBookAuthorSoapIn" />
+      <wsdl:output message="tns:UpdateBookAuthorSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateBookYearAndEdition">
+      <wsdl:input message="tns:UpdateBookYearAndEditionSoapIn" />
+      <wsdl:output message="tns:UpdateBookYearAndEditionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddBookYearAndEdition">
+      <wsdl:input message="tns:AddBookYearAndEditionSoapIn" />
+      <wsdl:output message="tns:AddBookYearAndEditionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="QueryEditionByNumber">
+      <wsdl:input message="tns:QueryEditionByNumberSoapIn" />
+      <wsdl:output message="tns:QueryEditionByNumberSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CountEditionsByBook">
+      <wsdl:input message="tns:CountEditionsByBookSoapIn" />
+      <wsdl:output message="tns:CountEditionsByBookSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateAuthor">
+      <wsdl:input message="tns:CreateAuthorSoapIn" />
+      <wsdl:output message="tns:CreateAuthorSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateBook">
+      <wsdl:input message="tns:CreateBookSoapIn" />
+      <wsdl:output message="tns:CreateBookSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteAuthorByCode">
+      <wsdl:input message="tns:DeleteAuthorByCodeSoapIn" />
+      <wsdl:output message="tns:DeleteAuthorByCodeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteBook">
+      <wsdl:input message="tns:DeleteBookSoapIn" />
+      <wsdl:output message="tns:DeleteBookSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteBookEdition">
+      <wsdl:input message="tns:DeleteBookEditionSoapIn" />
+      <wsdl:output message="tns:DeleteBookEditionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="QueryAuthorByCodeInBooks">
+      <wsdl:input message="tns:QueryAuthorByCodeInBooksSoapIn" />
+      <wsdl:output message="tns:QueryAuthorByCodeInBooksSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="QueryAuthorByName">
+      <wsdl:input message="tns:QueryAuthorByNameSoapIn" />
+      <wsdl:output message="tns:QueryAuthorByNameSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="QueryBookByCode">
+      <wsdl:input message="tns:QueryBookByCodeSoapIn" />
+      <wsdl:output message="tns:QueryBookByCodeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="QueryBookByCompleteName">
+      <wsdl:input message="tns:QueryBookByCompleteNameSoapIn" />
+      <wsdl:output message="tns:QueryBookByCompleteNameSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateAuthorName">
+      <wsdl:input message="tns:UpdateAuthorNameSoapIn" />
+      <wsdl:output message="tns:UpdateAuthorNameSoapOut" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="LibraryServiceSoap" type="tns:LibraryServiceSoap">
@@ -37,11 +500,371 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="QueryBookByName">
+      <soap:operation soapAction="http://tempuri.org/QueryBookByName" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QueryBookByAuthor">
+      <soap:operation soapAction="http://tempuri.org/QueryBookByAuthor" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QueryBookByYearAndEdition">
+      <soap:operation soapAction="http://tempuri.org/QueryBookByYearAndEdition" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AuthorExistsByCode">
+      <soap:operation soapAction="http://tempuri.org/AuthorExistsByCode" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateBookName">
+      <soap:operation soapAction="http://tempuri.org/UpdateBookName" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateBookAuthor">
+      <soap:operation soapAction="http://tempuri.org/UpdateBookAuthor" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateBookYearAndEdition">
+      <soap:operation soapAction="http://tempuri.org/UpdateBookYearAndEdition" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddBookYearAndEdition">
+      <soap:operation soapAction="http://tempuri.org/AddBookYearAndEdition" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QueryEditionByNumber">
+      <soap:operation soapAction="http://tempuri.org/QueryEditionByNumber" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CountEditionsByBook">
+      <soap:operation soapAction="http://tempuri.org/CountEditionsByBook" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateAuthor">
+      <soap:operation soapAction="http://tempuri.org/CreateAuthor" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateBook">
+      <soap:operation soapAction="http://tempuri.org/CreateBook" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteAuthorByCode">
+      <soap:operation soapAction="http://tempuri.org/DeleteAuthorByCode" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteBook">
+      <soap:operation soapAction="http://tempuri.org/DeleteBook" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteBookEdition">
+      <soap:operation soapAction="http://tempuri.org/DeleteBookEdition" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QueryAuthorByCodeInBooks">
+      <soap:operation soapAction="http://tempuri.org/QueryAuthorByCodeInBooks" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QueryAuthorByName">
+      <soap:operation soapAction="http://tempuri.org/QueryAuthorByName" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QueryBookByCode">
+      <soap:operation soapAction="http://tempuri.org/QueryBookByCode" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QueryBookByCompleteName">
+      <soap:operation soapAction="http://tempuri.org/QueryBookByCompleteName" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateAuthorName">
+      <soap:operation soapAction="http://tempuri.org/UpdateAuthorName" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
   </wsdl:binding>
   <wsdl:binding name="LibraryServiceSoap12" type="tns:LibraryServiceSoap">
     <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
     <wsdl:operation name="HelloWorld">
       <soap12:operation soapAction="http://tempuri.org/HelloWorld" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QueryBookByName">
+      <soap12:operation soapAction="http://tempuri.org/QueryBookByName" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QueryBookByAuthor">
+      <soap12:operation soapAction="http://tempuri.org/QueryBookByAuthor" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QueryBookByYearAndEdition">
+      <soap12:operation soapAction="http://tempuri.org/QueryBookByYearAndEdition" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AuthorExistsByCode">
+      <soap12:operation soapAction="http://tempuri.org/AuthorExistsByCode" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateBookName">
+      <soap12:operation soapAction="http://tempuri.org/UpdateBookName" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateBookAuthor">
+      <soap12:operation soapAction="http://tempuri.org/UpdateBookAuthor" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateBookYearAndEdition">
+      <soap12:operation soapAction="http://tempuri.org/UpdateBookYearAndEdition" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddBookYearAndEdition">
+      <soap12:operation soapAction="http://tempuri.org/AddBookYearAndEdition" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QueryEditionByNumber">
+      <soap12:operation soapAction="http://tempuri.org/QueryEditionByNumber" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CountEditionsByBook">
+      <soap12:operation soapAction="http://tempuri.org/CountEditionsByBook" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateAuthor">
+      <soap12:operation soapAction="http://tempuri.org/CreateAuthor" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateBook">
+      <soap12:operation soapAction="http://tempuri.org/CreateBook" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteAuthorByCode">
+      <soap12:operation soapAction="http://tempuri.org/DeleteAuthorByCode" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteBook">
+      <soap12:operation soapAction="http://tempuri.org/DeleteBook" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteBookEdition">
+      <soap12:operation soapAction="http://tempuri.org/DeleteBookEdition" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QueryAuthorByCodeInBooks">
+      <soap12:operation soapAction="http://tempuri.org/QueryAuthorByCodeInBooks" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QueryAuthorByName">
+      <soap12:operation soapAction="http://tempuri.org/QueryAuthorByName" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QueryBookByCode">
+      <soap12:operation soapAction="http://tempuri.org/QueryBookByCode" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QueryBookByCompleteName">
+      <soap12:operation soapAction="http://tempuri.org/QueryBookByCompleteName" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateAuthorName">
+      <soap12:operation soapAction="http://tempuri.org/UpdateAuthorName" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

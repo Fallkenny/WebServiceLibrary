@@ -10,11 +10,7 @@ namespace LibraryClient
     {
         static void Main(string[] args)
         {
-            localhost.LibraryService libraryService = new localhost.LibraryService();
-
-            Console.WriteLine(libraryService.HelloWorld());
-
-            Console.ReadKey();
+            new LibraryManager().Run();
 
         }
     }
